@@ -1,0 +1,35 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Database files (contain user data - don't commit to public repos)
+*.db
+*.db-wal
+*.db-shm
+
+# Backups
+backups/
+
+# Environment variables
+.env
+.env.test
+
+# Run logs (contain bot token in API URLs)
+*.log
+.claude/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store

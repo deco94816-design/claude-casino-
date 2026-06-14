@@ -1,0 +1,30 @@
+{
+  "name": "Optimus Casino Bot",
+  "description": "Feature-rich Telegram Casino Bot with multiple games, crypto payments, referral system, and admin management.",
+  "keywords": ["telegram", "bot", "casino", "python"],
+  "repository": "https://github.com/deco94816-design/optimus-",
+  "logo": "https://raw.githubusercontent.com/deco94816-design/optimus-/main/leaderboard.png",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Your Telegram Bot Token from @BotFather",
+      "required": true
+    },
+    "ADMIN_ID": {
+      "description": "Your Telegram User ID (primary admin)",
+      "required": false,
+      "value": "5709159932"
+    }
+  },
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "stack": "heroku-24"
+}

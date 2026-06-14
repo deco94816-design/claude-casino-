@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  casino-bot:
+    build: .
+    container_name: optimus-casino-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - bot-data:/app/data
+      - ./backups:/app/backups
+
+volumes:
+  bot-data:
