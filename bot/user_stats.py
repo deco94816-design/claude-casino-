@@ -18,7 +18,7 @@ from librate_casino import (
     MATCHES_PER_PAGE, MATCH_GAME_DISPLAY, MATCH_ID_BASE,
     create_progress_bar, db, get_or_create_profile, get_user_balance,
     get_user_link, handle_errors, logger, register_menu_owner,
-    send_bot_reply_html, start, t, translate_text,
+    send_bot_reply_html, t, translate_text,
 )
 
 

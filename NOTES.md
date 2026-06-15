@@ -56,3 +56,14 @@ guard (it previously re-ran all DDL + 3 caught-exception ALTERs on every call).
 - At refactor time the `C:` drive was **100% full (0 bytes free)**. A casino bot
   writes to SQLite and `backups/` continuously — a full disk will cause failed
   writes / corruption. Free space before running in production.
+
+## /start withdraw -> NameError (pre-existing, preserved)
+`start` calls `withdraw_command(update, context)` for the `/start withdraw`
+deep-link, but **`withdraw_command` is never defined anywhere** in the codebase.
+In the original monolith this raised `NameError` (swallowed by `@handle_errors`).
+Preserved verbatim in `bot/start_cmd.py`: the name is left bare (NOT `lc.`-prefixed,
+which would change it to `AttributeError`), so behaviour is byte-for-byte identical.
+Real fix (out of scope: would change behaviour) = implement/define `withdraw_command`.
+
+Also removed a dead `start` import from `bot/user_stats.py` (it imported the
+command but only ever used a local `start` pagination var — never called it).
